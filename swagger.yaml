@@ -1,0 +1,565 @@
+openapi: '3.0.0'
+info:
+  title: E-Commerce-API
+  version: '1.0'
+servers:
+  - url: https://itwashard-auufff.onrender.com/api
+paths:
+  /users/65a2b1010459e2aa346f1b4c:
+    get:
+      tags:
+        - Auth
+      summary: Logout User
+      operationId: LogoutUser
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      security: []
+  /auth/register:
+    post:
+      tags:
+        - Auth
+      summary: Register User
+      operationId: RegisterUser
+      parameters: []
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              allOf:
+                - $ref: '#/components/schemas/RegisterUserRequest'
+            example:
+              name: Tolebi
+              email: ermek.tolebi@bk.ru
+              password: Aa03031976
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      security: []
+  /auth/login:
+    post:
+      tags:
+        - Auth
+      summary: Login User
+      operationId: LoginUser
+      parameters: []
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              allOf:
+                - $ref: '#/components/schemas/LoginUserRequest'
+            example:
+              email: ermek.bolatbek@bk.ru
+              password: Aa03031976
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      security: []
+  /users/updateUserPassword:
+    patch:
+      tags:
+        - Auth
+      summary: Update Password
+      operationId: UpdatePassword
+      parameters: []
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              allOf:
+                - $ref: '#/components/schemas/UpdatePasswordRequest'
+            example:
+              oldPassword: Aa03031976
+              newPassword: Aa0303
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      security: []
+  /users:
+    get:
+      tags:
+        - User
+      summary: Get All Users
+      operationId: GetAllUsers
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      security: []
+  /users/65a2d86437723f94c1666bb7:
+    get:
+      tags:
+        - User
+      summary: Get Single User
+      operationId: GetSingleUser
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      security: []
+  /users/showMe:
+    get:
+      tags:
+        - User
+      summary: Show Current User
+      operationId: ShowCurrentUser
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      security: []
+  /users/updateUser:
+    patch:
+      tags:
+        - User
+      summary: Update User
+      operationId: UpdateUser
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      security: []
+  /products:
+    post:
+      tags:
+        - Products
+      summary: Create Product
+      operationId: CreateProduct
+      parameters: []
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              allOf:
+                - $ref: '#/components/schemas/CreateProductRequest'
+            example:
+              name: accent chair
+              price: 25999
+              image: /uploads/computer-6.jpeg
+              colors:
+                - '#ff0000'
+                - '#00ff00'
+                - '#0000ff'
+              company: marcos
+              description: Cloud bread VHS hell of banjo bicycle rights jianbing umami mumblecore etsy 8-bit pok pok +1 wolf. Vexillologist yr dreamcatcher waistcoat, authentic chillwave trust fund. Viral typewriter fingerstache pinterest pork belly narwhal. Schlitz venmo everyday carry kitsch pitchfork chillwave iPhone taiyaki trust fund hashtag kinfolk microdosing gochujang live-edge
+              category: office
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      security: []
+    get:
+      tags:
+        - Products
+      summary: Get All Products
+      operationId: GetAllProducts
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      security: []
+  /products/65a3ab6c1ee99207f26bfddc:
+    get:
+      tags:
+        - Products
+      summary: get Single Product
+      operationId: getSingleProduct
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      security: []
+    delete:
+      tags:
+        - Products
+      summary: Delete a product
+      operationId: Deleteaproduct
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      security: []
+    patch:
+      tags:
+        - Products
+      summary: Update a Product
+      operationId: UpdateaProduct
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      security: []
+  /products/uploadImage:
+    post:
+      tags:
+        - Products
+      summary: Upload an Image
+      operationId: UploadanImage
+      parameters: []
+      requestBody:
+        content:
+          multipart/form-data:
+            encoding: {}
+            schema:
+              type: object
+              required:
+                - image
+              properties:
+                image:
+                  type: string
+        required: false
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      security: []
+  /products/65a3ab6c1ee99207f26bfddc/reviews:
+    get:
+      tags:
+        - Products
+      summary: Get Single Product Reviews
+      operationId: GetSingleProductReviews
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      security: []
+  /reviews:
+    get:
+      tags:
+        - Reviews
+      summary: Get All Reviews
+      operationId: GetAllReviews
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      security: []
+    post:
+      tags:
+        - Reviews
+      summary: Create Review
+      operationId: CreateReview
+      parameters: []
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              allOf:
+                - $ref: '#/components/schemas/CreateReviewRequest'
+            example:
+              product: 65a3ab6c1ee99207f26bfddc
+              rating: 2
+              title: 'Thats bad '
+              comment: No need to buy this thing
+        required: true
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      security: []
+  /reviews/65a3d27c7e1c6f1cca01ac1d:
+    get:
+      tags:
+        - Reviews
+      summary: Get single Review
+      operationId: GetsingleReview
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      security: []
+    patch:
+      tags:
+        - Reviews
+      summary: Update Review
+      operationId: UpdateReview
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      security: []
+    delete:
+      tags:
+        - Reviews
+      summary: Delete Review
+      operationId: DeleteReview
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      security: []
+  /orders:
+    post:
+      tags:
+        - Orders
+      summary: Create a order
+      operationId: Createaorder
+      parameters: []
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              allOf:
+                - $ref: '#/components/schemas/CreateaorderRequest'
+            example:
+              tax: 399
+              shippingFee: 499
+              items:
+                - amount: 34
+                  product: 65a3ab6c1ee99207f26bfddc
+        required: true
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      security: []
+    get:
+      tags:
+        - Orders
+      summary: Get All Orders
+      operationId: GetAllOrders
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      security: []
+  /orders/65a420fb56dec2435436199e:
+    get:
+      tags:
+        - Orders
+      summary: Get Single Order
+      operationId: GetSingleOrder
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      security: []
+    patch:
+      tags:
+        - Orders
+      summary: Update Order
+      operationId: UpdateOrder
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      security: []
+  /orders/showAllMyOrders:
+    get:
+      tags:
+        - Orders
+      summary: Show Current User Orders
+      operationId: ShowCurrentUserOrders
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      security: []
+components:
+  schemas:
+    RegisterUserRequest:
+      title: RegisterUserRequest
+      required:
+        - name
+        - email
+        - password
+      type: object
+      properties:
+        name:
+          type: string
+        email:
+          type: string
+        password:
+          type: string
+      example:
+        name: Tolebi
+        email: ermek.tolebi@bk.ru
+        password: Aa03031976
+    LoginUserRequest:
+      title: LoginUserRequest
+      required:
+        - email
+        - password
+      type: object
+      properties:
+        email:
+          type: string
+        password:
+          type: string
+      example:
+        email: ermek.bolatbek@bk.ru
+        password: Aa03031976
+    UpdatePasswordRequest:
+      title: UpdatePasswordRequest
+      required:
+        - oldPassword
+        - newPassword
+      type: object
+      properties:
+        oldPassword:
+          type: string
+        newPassword:
+          type: string
+      example:
+        oldPassword: Aa03031976
+        newPassword: Aa0303
+    CreateProductRequest:
+      title: CreateProductRequest
+      required:
+        - name
+        - price
+        - image
+        - colors
+        - company
+        - description
+        - category
+      type: object
+      properties:
+        name:
+          type: string
+        price:
+          type: integer
+        image:
+          type: string
+        colors:
+          type: array
+          items:
+            type: string
+          description: ''
+        company:
+          type: string
+        description:
+          type: string
+        category:
+          type: string
+      example:
+        name: accent chair
+        price: 25999
+        image: /uploads/computer-6.jpeg
+        colors:
+          - '#ff0000'
+          - '#00ff00'
+          - '#0000ff'
+        company: marcos
+        description: Cloud bread VHS hell of banjo bicycle rights jianbing umami mumblecore etsy 8-bit pok pok +1 wolf. Vexillologist yr dreamcatcher waistcoat, authentic chillwave trust fund. Viral typewriter fingerstache pinterest pork belly narwhal. Schlitz venmo everyday carry kitsch pitchfork chillwave iPhone taiyaki trust fund hashtag kinfolk microdosing gochujang live-edge
+        category: office
+    CreateReviewRequest:
+      title: CreateReviewRequest
+      required:
+        - product
+        - rating
+        - title
+        - comment
+      type: object
+      properties:
+        product:
+          type: string
+        rating:
+          type: integer
+        title:
+          type: string
+        comment:
+          type: string
+      example:
+        product: 65a3ab6c1ee99207f26bfddc
+        rating: 2
+        title: 'Thats bad '
+        comment: No need to buy this thing
+    CreateaorderRequest:
+      title: CreateaorderRequest
+      required:
+        - tax
+        - shippingFee
+        - items
+      type: object
+      properties:
+        tax:
+          type: integer
+        shippingFee:
+          type: integer
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/Item'
+          description: ''
+      example:
+        tax: 399
+        shippingFee: 499
+        items:
+          - amount: 34
+            product: 65a3ab6c1ee99207f26bfddc
+    Item:
+      title: Item
+      required:
+        - amount
+        - product
+      type: object
+      properties:
+        amount:
+          type: integer
+        product:
+          type: string
+      example:
+        amount: 34
+        product: 65a3ab6c1ee99207f26bfddc
+tags:
+  - name: Auth
+  - name: User
+  - name: Products
+  - name: Reviews
+  - name: Orders

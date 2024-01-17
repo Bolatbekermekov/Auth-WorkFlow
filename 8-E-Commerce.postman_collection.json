@@ -1,0 +1,606 @@
+{
+	"info": {
+		"_postman_id": "11ae4a4b-d1b6-4642-91bf-8ec5cce96538",
+		"name": "8-E-Commerce",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32107009"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Logout User",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{TODO_URL}}/users/65a2b1010459e2aa346f1b4c",
+							"host": [
+								"{{TODO_URL}}"
+							],
+							"path": [
+								"users",
+								"65a2b1010459e2aa346f1b4c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Tolebi\",\r\n    \"email\":\"ermek.tolebi@bk.ru\",\r\n    \"password\":\"Aa03031976\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{TODO_URL}}//auth/register",
+							"host": [
+								"{{TODO_URL}}"
+							],
+							"path": [
+								"",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login User",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// const jsonData = pm.response.json()\r",
+									"// pm.globals.set(\"accessToken\",jsonData.token)"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"ermek.bolatbek@bk.ru\",\r\n    \"password\":\"Aa03031976\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{TODO_URL}}/auth/login",
+							"host": [
+								"{{TODO_URL}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Password",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n    \"oldPassword\":\"Aa03031976\",\r\n    \"newPassword\":\"Aa0303\" \r\n }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{TODO_URL}}/users/updateUserPassword",
+							"host": [
+								"{{TODO_URL}}"
+							],
+							"path": [
+								"users",
+								"updateUserPassword"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Get All Users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{TODO_URL}}/users",
+							"host": [
+								"{{TODO_URL}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Single User",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{TODO_URL}}/users/65a2d86437723f94c1666bb7",
+							"host": [
+								"{{TODO_URL}}"
+							],
+							"path": [
+								"users",
+								"65a2d86437723f94c1666bb7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show Current User",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{TODO_URL}}/users/showMe",
+							"host": [
+								"{{TODO_URL}}"
+							],
+							"path": [
+								"users",
+								"showMe"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update User",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "{{TODO_URL}}/users/updateUser",
+							"host": [
+								"{{TODO_URL}}"
+							],
+							"path": [
+								"users",
+								"updateUser"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update User Password",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "{{TODO_URL}}/users/updateUserPassword",
+							"host": [
+								"{{TODO_URL}}"
+							],
+							"path": [
+								"users",
+								"updateUserPassword"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Products",
+			"item": [
+				{
+					"name": "Create Product",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n    \"name\": \"accent chair\",\r\n    \"price\": 25999,\r\n    \"image\": \"/uploads/computer-6.jpeg\",\r\n    \"colors\": [\"#ff0000\", \"#00ff00\", \"#0000ff\"],\r\n    \"company\": \"marcos\",\r\n    \"description\": \"Cloud bread VHS hell of banjo bicycle rights jianbing umami mumblecore etsy 8-bit pok pok +1 wolf. Vexillologist yr dreamcatcher waistcoat, authentic chillwave trust fund. Viral typewriter fingerstache pinterest pork belly narwhal. Schlitz venmo everyday carry kitsch pitchfork chillwave iPhone taiyaki trust fund hashtag kinfolk microdosing gochujang live-edge\",\r\n    \"category\": \"office\"\r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{TODO_URL}}/products",
+							"host": [
+								"{{TODO_URL}}"
+							],
+							"path": [
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Products",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{TODO_URL}}/products",
+							"host": [
+								"{{TODO_URL}}"
+							],
+							"path": [
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get Single Product",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{TODO_URL}}/products/65a3ab6c1ee99207f26bfddc",
+							"host": [
+								"{{TODO_URL}}"
+							],
+							"path": [
+								"products",
+								"65a3ab6c1ee99207f26bfddc"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete a product",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{TODO_URL}}/products/65a3ab6c1ee99207f26bfddc",
+							"host": [
+								"{{TODO_URL}}"
+							],
+							"path": [
+								"products",
+								"65a3ab6c1ee99207f26bfddc"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update a Product",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "{{TODO_URL}}/products/65a3ab6c1ee99207f26bfddc",
+							"host": [
+								"{{TODO_URL}}"
+							],
+							"path": [
+								"products",
+								"65a3ab6c1ee99207f26bfddc"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Upload a Image",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/Bolatbek/OneDrive/Рабочий стол/node-express-course-main/07-file-upload/starter/images/computer-6.jpeg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{TODO_URL}}/products/uploadImage",
+							"host": [
+								"{{TODO_URL}}"
+							],
+							"path": [
+								"products",
+								"uploadImage"
+							],
+							"query": [
+								{
+									"key": "image",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Single Product Reviews",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{TODO_URL}}/products/65a3ab6c1ee99207f26bfddc/reviews",
+							"host": [
+								"{{TODO_URL}}"
+							],
+							"path": [
+								"products",
+								"65a3ab6c1ee99207f26bfddc",
+								"reviews"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Reviews",
+			"item": [
+				{
+					"name": "Get All Reviews",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{TODO_URL}}/reviews",
+							"host": [
+								"{{TODO_URL}}"
+							],
+							"path": [
+								"reviews"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Review",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"product\":\"65a3ab6c1ee99207f26bfddc\",\r\n    \"rating\":2,\r\n    \"title\":\"Thats bad \",\r\n    \"comment\":\"No need to buy this thing\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{TODO_URL}}/reviews",
+							"host": [
+								"{{TODO_URL}}"
+							],
+							"path": [
+								"reviews"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get single Review",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{TODO_URL}}/reviews/65a3d27c7e1c6f1cca01ac1d",
+							"host": [
+								"{{TODO_URL}}"
+							],
+							"path": [
+								"reviews",
+								"65a3d27c7e1c6f1cca01ac1d"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Review",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "{{TODO_URL}}/reviews/65a3d27c7e1c6f1cca01ac1d",
+							"host": [
+								"{{TODO_URL}}"
+							],
+							"path": [
+								"reviews",
+								"65a3d27c7e1c6f1cca01ac1d"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Review",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{TODO_URL}}/reviews/65a3d27c7e1c6f1cca01ac1d",
+							"host": [
+								"{{TODO_URL}}"
+							],
+							"path": [
+								"reviews",
+								"65a3d27c7e1c6f1cca01ac1d"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Orders",
+			"item": [
+				{
+					"name": "Create a order",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n  {\r\n    \"tax\": 399,\r\n    \"shippingFee\": 499,\r\n    \"items\": [\r\n      {\r\n        \r\n        \"amount\": 34,\r\n        \"product\": \"65a3ab6c1ee99207f26bfddc\"\r\n      }\r\n    ]\r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{TODO_URL}}/orders",
+							"host": [
+								"{{TODO_URL}}"
+							],
+							"path": [
+								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Orders",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{TODO_URL}}/orders",
+							"host": [
+								"{{TODO_URL}}"
+							],
+							"path": [
+								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Single Order",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{TODO_URL}}/orders/65a420fb56dec2435436199e",
+							"host": [
+								"{{TODO_URL}}"
+							],
+							"path": [
+								"orders",
+								"65a420fb56dec2435436199e"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show Current User Orders",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{TODO_URL}}/orders/showAllMyOrders",
+							"host": [
+								"{{TODO_URL}}"
+							],
+							"path": [
+								"orders",
+								"showAllMyOrders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Order",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "{{TODO_URL}}/orders/65a420fb56dec2435436199e",
+							"host": [
+								"{{TODO_URL}}"
+							],
+							"path": [
+								"orders",
+								"65a420fb56dec2435436199e"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "8-E-Commerce-Dev",
+			"item": [
+				{
+					"name": "User",
+					"item": []
+				},
+				{
+					"name": "Product",
+					"item": []
+				},
+				{
+					"name": "Auth",
+					"item": []
+				},
+				{
+					"name": "Review",
+					"item": []
+				},
+				{
+					"name": "Order",
+					"item": []
+				}
+			]
+		}
+	]
+}
